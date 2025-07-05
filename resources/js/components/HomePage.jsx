@@ -75,7 +75,9 @@ const HomePage = () => {
                     <h1 className="highlight">{homeData.title}</h1>
                     <p className="description">{homeData.description}</p>
                     <div className="cta-buttons">
-                        <button className="get-in-touch-btn">GET IN TOUCH →</button>
+                        <a href={homeData.socials.mail} className="get-in-touch-btn">
+                            GET IN TOUCH →
+                        </a>
                     </div>
                 </div>
                 <div className="hero-image">
