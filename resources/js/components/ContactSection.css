@@ -1,0 +1,163 @@
+.contact-section {
+    padding: 6rem 7%;
+    background-color: #f9fafb; 
+    color: #374151; 
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    border-top: 1px solid #e5e7eb;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('/images/map-bg.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.02; 
+    z-index: 1;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* --- Kolom Kiri (Info) --- */
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info .section-title {
+    font-size: 2.5rem;
+    text-align: left;
+    color: var(--bg-dark); 
+}
+
+.contact-info .section-title::after {
+    display: block; content: ''; width: 60px; height: 3px;
+    background-color: var(--bg-muted); 
+    margin: 1rem 0 2rem 0;
+}
+
+.contact-description {
+    color: #6b7280;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.info-item {
+    display: flex; align-items: flex-start; gap: 1.5rem; margin-bottom: 1.5rem;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    color: var(--bg-dark); 
+    margin-top: 5px;
+}
+
+.info-item h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    color: #374151;
+}
+
+.info-item p, .info-item a {
+    margin: 0;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+    color: var(--bg-dark);
+}
+
+/* --- Kolom Kanan (Form) --- */
+.contact-form-wrapper {
+    flex: 1.5;
+    min-width: 320px;
+    background-color: #ffffff; 
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); 
+}
+
+.contact-form h3 {
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: #374151;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block; font-size: 0.8rem; font-weight: 600; color: #6b7280; margin-bottom: 0.5rem; letter-spacing: 1px; text-transform: uppercase;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    background-color: #f9fafb; 
+    border: 1px solid #d1d5db; 
+    color: #374151; 
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--bg-muted); 
+    box-shadow: 0 0 0 3px rgba(152, 161, 188, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--bg-dark); 
+    color: var(--text-light); 
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #404258; 
+    transform: translateY(-2px);
+}
+
+.btn-submit:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.status-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.status-message.success {
+    color: #155724;
+    background-color: #d4edda;
+}
+
+.status-message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+}

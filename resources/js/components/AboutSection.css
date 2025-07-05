@@ -1,0 +1,280 @@
+.about-section {
+    background-color: #f9fafb;
+    color: #374151;
+    padding: 6rem 7%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2DAA9E;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.section-title::after {
+    content: ''; display: block; width: 60px; height: 3px; background-color: #66D2CE; margin: 0.5rem auto 3rem;
+}
+
+/* BAGIAN ATAS: Perkenalan */
+.about-intro-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-bottom: 4rem; /* Memberi jarak ke bagian bawah */
+}
+
+.about-image {
+    flex-basis: 35%;
+    flex-shrink: 0;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-bio {
+    flex-basis: 65%;
+}
+
+.about-bio h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #2DAA9E;
+}
+
+.about-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #6b7280;
+    margin-bottom: 1em; /* Jarak antar paragraf */
+}
+
+.about-description p {
+    margin: 0; /* Menghilangkan margin default dari <p> yang di-generate ReactMarkdown */
+}
+
+/* BAGIAN BAWAH: Area Interaktif */
+.about-interactive-area {
+    max-width: 900px; /* Batasi lebar agar rapi */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stats-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    justify-content: center; /* Menengahkan kartu */
+}
+
+.stat-card {
+    flex: 1;
+    max-width: 200px; /* Batasi lebar kartu */
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2DAA9E;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center; /* Menengahkan tombol tab */
+    border-bottom: 1px solid #d1d5db;
+    margin-bottom: 1.5rem;
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6b7280;
+    position: relative;
+    bottom: -1px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    color: #2DAA9E;
+}
+
+.tab-button.active {
+    color: #2DAA9E;
+    border-bottom-color: #2DAA9E;
+}
+
+.tab-content {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 2rem; /* Padding lebih besar */
+    min-height: 150px;
+    animation: fadeIn 0.5s ease;
+    text-align: center; /* Konten di dalam tab menjadi tengah */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-pane h4 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Tengah juga */
+    gap: 0.5rem;
+}
+.content-pane p {
+    margin-bottom: 0;
+    color: #6b7280;
+}
+
+.skills-list, .interests-list, .tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.skills-list li, .interests-list li, .tools-list li {
+    background-color: #EAEAEA;
+    color: #374151;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skills-list li:hover, .interests-list li:hover, .tools-list li:hover {
+    background-color: #66D2CE;
+    color: white;
+    transform: scale(1.05);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border: 2px solid #66D2CE;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #66D2CE;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #2DAA9E;
+    border-color: #2DAA9E;
+    transform: translateY(-2px);
+}
+
+.education-item + .education-item {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #EAEAEA;
+}
+
+/* Styling untuk Markdown agar sesuai */
+.about-description strong {
+    font-weight: 700;
+    color: #2DAA9E;
+}
+
+.about-description em {
+    font-style: italic;
+    color: #4a5568;
+}
+
+/* --- Styling Baru untuk Skill Section --- */
+
+.skill-categories-container {
+    width: 100%;
+    text-align: left;
+}
+
+.skill-category {
+    margin-bottom: 2rem;
+}
+
+.skill-category:last-child {
+    margin-bottom: 0;
+}
+
+.skill-category h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2DAA9E;
+    margin: 0 0 1rem 0;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.skill-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-card {
+    background-color: #ffffff;
+    color: #4a5568;
+    border: 1px solid #d1d5db;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: default; /* Ganti cursor karena ini bukan link */
+    transition: all 0.3s ease;
+}
+
+/* Efek interaktif saat hover */
+.skill-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    background-color: #2DAA9E;
+    color: #ffffff;
+    border-color: #2DAA9E;
+    box-shadow: 0 7px 15px rgba(45, 170, 158, 0.2);
+}
