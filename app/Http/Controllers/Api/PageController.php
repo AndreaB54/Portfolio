@@ -11,7 +11,7 @@ class PageController extends Controller
     public function index()
     {
         // Hanya menampilkan view, tanpa data
-        return view('index');
+        return view('pages.home.index');
     }
 
     // Menyiapkan data untuk halaman utama
