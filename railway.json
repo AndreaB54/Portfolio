@@ -4,6 +4,6 @@
         "builder": "nixpacks"
     },
     "deploy": {
-        "startCommand": "php -S 0.0.0.0:$PORT -t public 2>&1 | tee /tmp/php.log"
+        "startCommand": "php artisan migrate --force && php -S 0.0.0.0:$PORT -t public"
     }
 }
