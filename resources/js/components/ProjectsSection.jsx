@@ -6,6 +6,7 @@ const ProjectsSection = ({ projectsData }) => {
     const scrollContainerRef = useRef(null);
 
     const scroll = (direction) => {
+        // Menentukan seberapa jauh scroll setiap kali tombol diklik
         const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
         if (direction === 'left') {
             scrollContainerRef.current.scrollLeft -= scrollAmount;
@@ -21,14 +22,15 @@ const ProjectsSection = ({ projectsData }) => {
                     <h2 className="section-title">{projectsData.title}</h2>
                     <p className="projects-description">{projectsData.description}</p>
                 </div>
-            </div>
-            <div className="slider-controls">
-                <button onClick={() => scroll('left')} className="slider-btn" aria-label="Previous Project">
-                    <FaArrowLeft />
-                </button>
-                <button onClick={() => scroll('right')} className="slider-btn" aria-label="Next Project">
-                    <FaArrowRight />
-                </button>
+
+                <div className="slider-controls">
+                    <button onClick={() => scroll('left')} className="slider-btn" aria-label="Previous Project">
+                        <FaArrowLeft />
+                    </button>
+                    <button onClick={() => scroll('right')} className="slider-btn" aria-label="Next Project">
+                        <FaArrowRight />
+                    </button>
+                </div>
             </div>
 
             <div className="projects-slider-container" ref={scrollContainerRef}>

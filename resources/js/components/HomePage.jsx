@@ -5,7 +5,7 @@ import './HomePage.css';
 import ProjectsSection from './ProjectsSection';
 
 // Icon Footer
-import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaBars, FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
     { href: '#home', label: 'Home' },
@@ -17,6 +17,8 @@ const navLinks = [
 const HomePage = () => {
     const [homeData, setHomeData] = useState(null);
     const [isScrolled, setIsScrolled] = useState(false);
+    // Khusus buat navbar mobile
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,7 +48,6 @@ const HomePage = () => {
         return <div className="loading-screen">Loading...</div>;
     }
 
-    // Buat link untuk ambil data social media
     const socialLinksFooter = [
         { href: homeData.socials.linkedin, icon: <FaLinkedin />, label: 'LinkedIn' },
         { href: homeData.socials.instagram, icon: <FaInstagram />, label: 'Instagram' },
@@ -58,13 +59,20 @@ const HomePage = () => {
         <div className="homepage">
             <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                 <div className="logo">ANDREA BAIKOLE</div>
-                <ul className="nav-links">
+
+                <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     {navLinks.map((link) => (
                         <li key={link.label}>
-                            <a href={link.href}>{link.label}</a>
+                            <a href={link.href} onClick={() => setIsMenuOpen(false)}>
+                                {link.label}
+                            </a>
                         </li>
                     ))}
                 </ul>
+
+                <button className="hamburger-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {isMenuOpen ? <FaTimes /> : <FaBars />}
+                </button>
             </nav>
 
             <header id="home" className="hero-section">

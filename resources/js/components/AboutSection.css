@@ -7,23 +7,29 @@
 
 .section-title {
     text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2DAA9E;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e6b66;
     margin-bottom: 1rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .section-title::after {
-    content: ''; display: block; width: 60px; height: 3px; background-color: #66D2CE; margin: 0.5rem auto 3rem;
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #66d2ce;
+    margin: 0.75rem auto 4rem;
+    border-radius: 2px;
 }
 
-/* BAGIAN ATAS: Perkenalan */
 .about-intro-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 4rem;
-    margin-bottom: 4rem; /* Memberi jarak ke bagian bawah */
+    margin-bottom: 4rem;
 }
 
 .about-image {
@@ -42,52 +48,59 @@
 }
 
 .about-bio h3 {
-    font-size: 1.8rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     margin-top: 0;
     margin-bottom: 1rem;
-    color: #2DAA9E;
+    color: #2daa9e;
 }
 
 .about-description {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    line-height: 1.9;
     color: #6b7280;
-    margin-bottom: 1em; /* Jarak antar paragraf */
+    margin-bottom: 1em;
 }
 
 .about-description p {
-    margin: 0; /* Menghilangkan margin default dari <p> yang di-generate ReactMarkdown */
+    margin: 0 0 1em 0;
 }
 
-/* BAGIAN BAWAH: Area Interaktif */
 .about-interactive-area {
-    max-width: 900px; /* Batasi lebar agar rapi */
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .stats-container {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-    justify-content: center; /* Menengahkan kartu */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    justify-content: center;
 }
 
 .stat-card {
     flex: 1;
-    max-width: 200px; /* Batasi lebar kartu */
+    max-width: 200px;
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 1rem;
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
     text-align: center;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(102, 210, 206, 0.2);
 }
 
 .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    color: #2DAA9E;
+    color: #2daa9e;
 }
 
 .stat-label {
@@ -120,27 +133,33 @@
 }
 
 .tab-button:hover {
-    color: #2DAA9E;
+    color: #2daa9e;
 }
 
 .tab-button.active {
-    color: #2DAA9E;
-    border-bottom-color: #2DAA9E;
+    color: #2daa9e;
+    border-bottom-color: #2daa9e;
 }
 
 .tab-content {
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
-    padding: 2rem; /* Padding lebih besar */
+    padding: 2rem;
     min-height: 150px;
     animation: fadeIn 0.5s ease;
-    text-align: center; /* Konten di dalam tab menjadi tengah */
+    text-align: center;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .content-pane h4 {
@@ -149,7 +168,7 @@
     color: #374151;
     display: flex;
     align-items: center;
-    justify-content: center; /* Tengah juga */
+    justify-content: center;
     gap: 0.5rem;
 }
 .content-pane p {
@@ -157,7 +176,9 @@
     color: #6b7280;
 }
 
-.skills-list, .interests-list, .tools-list {
+.skills-list,
+.interests-list,
+.tools-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -167,8 +188,10 @@
     margin: 0;
 }
 
-.skills-list li, .interests-list li, .tools-list li {
-    background-color: #EAEAEA;
+.skills-list li,
+.interests-list li,
+.tools-list li {
+    background-color: #eaeaea;
     color: #374151;
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
@@ -177,8 +200,10 @@
     transition: all 0.3s ease;
 }
 
-.skills-list li:hover, .interests-list li:hover, .tools-list li:hover {
-    background-color: #66D2CE;
+.skills-list li:hover,
+.interests-list li:hover,
+.tools-list li:hover {
+    background-color: #66d2ce;
     color: white;
     transform: scale(1.05);
 }
@@ -191,7 +216,7 @@
 
 .btn {
     padding: 0.8rem 1.8rem;
-    border: 2px solid #66D2CE;
+    border: 2px solid #66d2ce;
     border-radius: 5px;
     font-weight: 600;
     cursor: pointer;
@@ -201,26 +226,26 @@
 }
 
 .btn-primary {
-    background-color: #66D2CE;
+    background-color: #66d2ce;
     color: #ffffff;
 }
 
 .btn-primary:hover {
-    background-color: #2DAA9E;
-    border-color: #2DAA9E;
+    background-color: #2daa9e;
+    border-color: #2daa9e;
     transform: translateY(-2px);
 }
 
 .education-item + .education-item {
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid #EAEAEA;
+    border-top: 1px solid #eaeaea;
 }
 
 /* Styling untuk Markdown agar sesuai */
 .about-description strong {
     font-weight: 700;
-    color: #2DAA9E;
+    color: #2daa9e;
 }
 
 .about-description em {
@@ -246,7 +271,7 @@
 .skill-category h3 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #2DAA9E;
+    color: #2daa9e;
     margin: 0 0 1rem 0;
     border-bottom: 2px solid #e5e7eb;
     padding-bottom: 0.5rem;
@@ -266,15 +291,95 @@
     border-radius: 8px;
     font-size: 0.95rem;
     font-weight: 500;
-    cursor: default; /* Ganti cursor karena ini bukan link */
+    cursor: default;
     transition: all 0.3s ease;
 }
 
-/* Efek interaktif saat hover */
 .skill-card:hover {
     transform: translateY(-4px) scale(1.02);
-    background-color: #2DAA9E;
+    background-color: #2daa9e;
     color: #ffffff;
-    border-color: #2DAA9E;
+    border-color: #2daa9e;
     box-shadow: 0 7px 15px rgba(45, 170, 158, 0.2);
+}
+
+/* STYLING RESPONSIVE PART (MEDIA QUERIES) */
+
+/* --- Tampilan Tablet (Layar medium) --- */
+@media (max-width: 992px) {
+    .about-section {
+        padding: 5rem 5%; /* Kurangi padding section */
+    }
+
+    .about-intro-container {
+        gap: 2rem; /* Kurangi jarak antara gambar dan bio */
+        align-items: flex-start;
+    }
+
+    .about-bio h3 {
+        font-size: 1.8rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+    }
+
+    .stats-container {
+        gap: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- Tampilan HP (Layar kecil) --- */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 4rem 5%;
+    }
+
+    /* Ubah layout intro menjadi vertikal */
+    .about-intro-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .about-image {
+        max-width: 280px;
+        margin: 0 auto; /* Tengahkan gambar */
+    }
+
+    .about-bio {
+        max-width: 100%;
+    }
+
+    .about-bio h3 {
+        font-size: 1.6rem;
+    }
+
+    /* Ubah layout kartu statistik menjadi vertikal */
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stat-card {
+        max-width: 100%; /* Lebar penuh */
+    }
+
+    /* Perkecil tombol tab agar muat */
+    .tabs {
+        flex-wrap: wrap; /* Izinkan tombol untuk pindah baris */
+        justify-content: center;
+    }
+
+    .tab-button {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .button-group {
+        justify-content: center;
+    }
 }

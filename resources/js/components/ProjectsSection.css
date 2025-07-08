@@ -1,76 +1,59 @@
 :root {
     --bg-dark: #555879;
-    --bg-muted: #98A1BC;
-    --text-light: #F4EBD3;
-    --text-accent: #DED3C4;
-    --accent-glow: rgba(222, 211, 196, 0.2);
+    --bg-muted: #98a1bc;
+    --text-light: #f4ebd3;
+    --text-accent: #ded3c4;
 }
 
-/* Layout and allignment */
+/* === SECTION WRAPPER === */
 .projects-section {
-    position: relative; 
     padding: 6rem 7%;
-    background-color: var(--bg-dark); 
+    background-color: var(--bg-dark);
+    overflow: hidden;
 }
 
 /* === HEADER === */
 .projects-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; 
-    margin-bottom: 2rem;
-    flex-wrap: wrap; /* Agar responsif di layar kecil */
-    gap: 1rem;
+    align-items: flex-start; /* Jaga agar item di atas */
+    gap: 2rem; /* Jarak antara teks dan tombol jika wrapping */
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap; /* Izinkan wrapping di layar kecil */
 }
 
 .projects-info {
-    flex: 1;
-    min-width: 300px; 
+    flex-grow: 1; 
+    max-width: 650px;
 }
 
-.projects-header .section-title {
+.projects-section .section-title {
     font-size: 2.2rem;
     font-weight: 800;
-    color: var(--text-light); 
+    color: var(--text-light);
     margin: 0;
     text-align: left;
 }
 
-.projects-header .section-title::after {
-    display: none; 
+.projects-section .section-title::after {
+    display: none;
 }
 
 .projects-description {
-    color: var(--bg-muted); 
-    max-width: 600px;
+    color: var(--bg-muted);
     font-size: 1rem;
     line-height: 1.6;
     margin-top: 1rem;
     text-align: left;
 }
 
-
 /* === SLIDER & KONTROL === */
-.projects-slider-container {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding-bottom: 1.5rem; 
-}
-
-/* Sembunyikan scroll-bar bawaan */
-.projects-slider-container::-webkit-scrollbar { display: none; }
-.projects-slider-container { scrollbar-width: none; -ms-overflow-style: none; }
-
-/* Tombol panah diposisikan di atas kanan header */
 .slider-controls {
     display: flex;
     gap: 0.75rem;
-    position: absolute;
-    top: 25%;
-    right: 7%;
+    align-items: center;
+    margin-left: auto; /* Secara otomatis mendorong elemen ini ke kanan */
+    margin-top: 5rem;
+    flex-shrink: 0; /* Mencegah tombol menyusut */
 }
 
 .slider-btn {
@@ -94,11 +77,29 @@
     transform: scale(1.1);
 }
 
+.projects-slider-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 1.5rem;
+}
+
+/* Sembunyikan scroll-bar bawaan */
+.projects-slider-container::-webkit-scrollbar {
+    display: none;
+}
+.projects-slider-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 /* === KARTU PROYEK === */
 .project-card {
-    flex: 0 0 320px; 
-    aspect-ratio: 4 / 5; 
-    background-color: #404258; 
+    flex: 0 0 320px;
+    aspect-ratio: 4 / 5;
+    background-color: #404258;
     border-radius: 16px;
     overflow: hidden;
     scroll-snap-align: start;
@@ -117,7 +118,7 @@
 
 .project-image {
     width: 100%;
-    height: 70%; /* Gambar mengisi 70% bagian atas kartu */
+    height: 70%;
     object-fit: cover;
 }
 
@@ -125,7 +126,7 @@
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-light);
-    margin: 1rem 1.5rem 0.25rem 1.5rem; 
+    margin: 1rem 1.5rem 0.25rem 1.5rem;
 }
 
 .project-category {
@@ -134,18 +135,16 @@
     margin: 0 1.5rem 1rem 1.5rem;
 }
 
-/* === RESPONSIVE === */
+/* === SET RESPONSIVE PAGE === */
+@media (max-width: 992px) {
+    .project-card {
+        flex-basis: 280px;
+    }
+}
+
 @media (max-width: 768px) {
-    .projects-header {
-        text-align: center;
-    }
-    .projects-header .section-title, .projects-header .projects-description {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .slider-controls {
-        width: 100%;
-        justify-content: center;
+    .project-card {
+        flex-basis: 75%; /* Lebar kartu proyek di layar kecil */
+        min-width: 280px;
     }
 }

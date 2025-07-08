@@ -153,7 +153,7 @@ class PageController extends Controller
             'contact' => [
                 'title' => 'Get in Touch',
                 'description' => 'Have a project in mind or just want to say hello? Feel free to reach out. I\'m always open to discussing new ideas and opportunities.',
-                'availability' => 'Open for new opportunities',
+                'availability' => 'Monday to Friday, 17:00 - 21:00 WIB',
                 'location' => 'Yogyakarta, Indonesia',
                 'email' => 'andrea.baikole@gmail.com',
                 'phone' => '+62 123 4567 890'

@@ -11,6 +11,7 @@
 
 body {
     margin: 0; 
+    background-color: var(--bg-dark); /* Pindahkan warna dasar ke body */
 }
 
 .homepage {
@@ -41,7 +42,6 @@ body {
     align-items: center;
     padding: 2rem 7%; 
     z-index: 1000; 
-    box-sizing: border-box; 
     transition: all 0.3s ease-in-out; 
     box-sizing: border-box; 
 }
@@ -60,6 +60,7 @@ body {
     font-size: 1.8rem;
     letter-spacing: 1px;
     text-transform: uppercase;
+    z-index: 10; /* Agar tidak tertutup menu mobile */
 }
 
 .nav-links {
@@ -68,6 +69,7 @@ body {
     gap: 3rem;
     margin: 0;
     padding: 0;
+    transition: transform 0.3s ease-in-out; /* Untuk animasi mobile */
 }
 
 .nav-links a {
@@ -102,6 +104,17 @@ body {
 }
 
 /* Tombol */
+/* Tombol buat mobile */
+.hamburger-menu {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    z-index: 10;
+}
+
 .get-in-touch-btn {
     border: none;
     cursor: pointer;
@@ -131,6 +144,7 @@ body {
     justify-content: space-between;
     padding: 5rem 7%;
     gap: 2rem;
+    min-height: 90vh; 
 }
 
 .hero-text {
@@ -255,4 +269,86 @@ body {
 .footer-copyright {
     font-size: 0.9rem;
     color: rgba(152, 161, 188, 0.6); 
+}
+
+/* RESPONSIVE PART (MEDIA QUERIES) */
+
+/* Tampilan Tablet */
+@media (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 3.5rem; /* Ukuran font judul diperkecil */
+    }
+    .nav-links {
+        gap: 1.5rem; /* Jarak antar link navigasi diperkecil */
+    }
+    .hero-section {
+        padding: 4rem 5%; /* Padding section diperkecil */
+    }
+}
+
+/* Tampilan HP (Mobile) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1.5rem 5%; /* Padding navbar diperkecil */
+    }
+
+    /* Tampilkan tombol hamburger */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Atur menu navigasi untuk mobile */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%; /* Lebar menu mobile */
+        height: 100vh;
+        background-color: #404258; 
+        flex-direction: column; /* Ubah jadi vertikal */
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transform: translateX(100%); 
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    }
+
+    /* Kelas 'active' ini akan ditambahkan dengan JavaScript saat hamburger di-klik */
+    .nav-links.active {
+        transform: translateX(0); 
+    }
+    
+    /* Ubah layout Hero Section menjadi vertikal */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5%;
+    }
+
+    .hero-text {
+        max-width: 100%; 
+        order: 2; 
+    }
+
+    .hero-image {
+        order: 1; 
+        margin-bottom: 2rem;
+    }
+    
+    .hero-image img {
+        max-width: 280px; 
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem; 
+    }
+
+    .hero-text .description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
 }
