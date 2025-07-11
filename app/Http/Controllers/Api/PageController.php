@@ -64,6 +64,87 @@ class PageController extends Controller
                     ]
                 ],
 
+                // ORGANIZATIONS
+                'organizations' => [
+                    [
+                        'role' => 'Member of the Organizational Division',
+                        'organization' => 'Badan Perwakilan Mahasiswa Fakultas Teknologi Informasi, UKDW',
+                        'period' => 'Feb 2024 - Present',
+                        'description' => 'Supervised and evaluated each work program of the UKDW Information Technology Faculty Student Organization to ensure accountability and performance alignment.'
+                    ],
+                    [
+                        'role' => 'Event Division Member',
+                        'organization' => 'Orientasi Kehidupan Akademika Universitas Kristen Duta Wacana (OKA UKDW)',
+                        'period' => 'Apr 2024 - Aug 2024',
+                        'description' => 'Acted as timekeeper, created the event rundown and TOR documents, and served as MC during general and non-formal orientation events to ensure smooth execution.'
+                    ],
+                    [
+                        'role' => 'Booth Representative',
+                        'organization' => 'ROBOTIS (Robot is ...)',
+                        'period' => 'Nov 2023',
+                        'description' => 'Presented and explained a smart parking system developed by UKDW, communicating complex technical concepts to diverse audiences and promoting sustainable urban development.'
+                    ],
+                    [
+                        'role' => 'Member of the Public Relations Division',
+                        'organization' => 'FTI Plus',
+                        'period' => 'May 2023 - Nov 2023',
+                        'description' => 'Managed study tour logistics for 32 students, including event coordination, registration, sponsorship, broadcasting, and participant data management during the visit to Semarang.'
+                    ],
+                    [
+                        'role' => 'Member of the Interest and Talent Division',
+                        'organization' => 'Himpunan Mahasiswa Teknik Informatika, UKDW',
+                        'period' => 'Jan 2023 - Feb 2024',
+                        'description' => 'Initiated the Kasbon program, an online peer-learning forum, and mentored students to prepare for the Rector’s Cup. Actively addressed student development and talent management.'
+                    ]
+                ],
+                
+                // EXPERIENCE
+                'experiences' => [
+                    [
+                        'role' => 'Enterprise Network Assistant Lecturer',
+                        'company' => 'Universitas Kristen Duta Wacana',
+                        'period' => 'Jan 2025 - Present',
+                        'description' => 'Guided students in designing, securing, and optimizing enterprise networks. Taught advanced topics such as OSPF, VPN, NAT, ACLs, firewall simulations, and QoS. Assisted in implementing policies to control traffic and improve network performance.'
+                    ],
+                    [
+                        'role' => 'Computer Network Lab Assistant Lecturer',
+                        'company' => 'Universitas Kristen Duta Wacana',
+                        'period' => 'Jan 2025 - Present',
+                        'description' => 'Instructed students on networking fundamentals including IP addressing, subnetting, and packet analysis using tools like Cisco Packet Tracer, GNS3, and Wireshark. Developed lab assignments, graded assessments, and offered technical guidance.'
+                    ],
+                    [
+                        'role' => 'LAN Infrastructure Lab Assistant Lecturer',
+                        'company' => 'Universitas Kristen Duta Wacana',
+                        'period' => 'Aug 2024 - Dec 2024',
+                        'description' => 'Supported students in configuring and troubleshooting MikroTik and Cisco devices. Facilitated real-world lab simulations and ensured practical understanding of LAN infrastructure.'
+                    ],
+                    [
+                        'role' => 'Cloud Computing Cohort',
+                        'company' => 'Bangkit Academy 2024 Batch 2',
+                        'period' => 'Sep 2024 - Jan 2025',
+                        'description' => 'Built scalable applications on Google Cloud. Completed labs on Cloud Functions, API integration, and virtual machines. Participated in a capstone project to develop an education accessibility platform.'
+                    ],
+                    [
+                        'role' => 'Computer Network Lab Assistant Lecturer',
+                        'company' => 'Universitas Kristen Duta Wacana',
+                        'period' => 'Jan 2024 - Jun 2024',
+                        'description' => 'Assisted with networking lab sessions, developed exercises and assignments, and provided academic support. Created instructional materials and evaluated student performance.'
+                    ],
+                    [
+                        'role' => 'Network Engineer Intern',
+                        'company' => 'Mission Aviation Fellowship',
+                        'period' => 'May 2022',
+                        'description' => 'Configured routers and installed network infrastructure in remote areas. Documented technical processes and managed network services such as DHCP and IP Cameras.'
+                    ],
+                    [
+                        'role' => 'IT Support Technician Intern',
+                        'company' => 'Mission Aviation Fellowship',
+                        'period' => 'Jun 2021 - Aug 2021',
+                        'description' => 'Provided hardware and software support, installed networks, and performed troubleshooting and computer maintenance tasks in field offices.'
+                    ]
+                ],
+
+
                 // SKILLS 
                 'skills' => [
                     [
@@ -114,7 +195,7 @@ class PageController extends Controller
                 'interests' => ['Web Development', 'Android Development', 'Desktop Application Development', 'Cloud Computing', 'Cybersecurity', 'Internet of Things', 'Network Engineering'],
                 
                 // TOOLS
-                'tools' => ['VS Code', 'Visual Studio 2022', 'GitHub', 'Wireshark', 'Winbox', 'Android Studio', 'XAMPP', 'Firebase Console']
+                'tools' => ['VS Code', 'Visual Studio 2022', 'GitHub', 'Wireshark', 'Winbox', 'Android Studio', 'XAMPP', 'Firebase Console'],
             ],
 
             // Data buat Projects Section

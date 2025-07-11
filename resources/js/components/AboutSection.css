@@ -1,3 +1,5 @@
+/* --- Container & Judul Utama --- */
+
 .about-section {
     background-color: #f9fafb;
     color: #374151;
@@ -9,8 +11,8 @@
     text-align: center;
     font-size: 2.2rem;
     font-weight: 800;
-    color: #1e6b66;
-    margin-bottom: 1rem;
+    color: #1e6b66; /* Teal gelap */
+    margin: 0 auto 1rem auto;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -20,10 +22,12 @@
     display: block;
     width: 70px;
     height: 4px;
-    background-color: #66d2ce;
+    background-color: #66d2ce; /* Teal terang */
     margin: 0.75rem auto 4rem;
     border-radius: 2px;
 }
+
+/* --- Area Intro (Foto & Bio) --- */
 
 .about-intro-container {
     display: flex;
@@ -41,6 +45,11 @@
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
 }
 
 .about-bio {
@@ -56,20 +65,55 @@
 }
 
 .about-description {
-    font-size: 1.05rem;
-    line-height: 1.9;
+    font-size: 1rem;
+    line-height: 1.8;
     color: #6b7280;
-    margin-bottom: 1em;
 }
 
 .about-description p {
     margin: 0 0 1em 0;
 }
 
+/* Styling untuk teks tebal/miring dari Markdown */
+.about-description strong {
+    font-weight: 700;
+    color: #2daa9e;
+}
+.about-description em {
+    font-style: italic;
+    color: #4a5568;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background-color: #66d2ce;
+    color: #ffffff;
+    border: 2px solid #66d2ce;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2daa9e;
+    border-color: #2daa9e;
+    transform: translateY(-2px);
+}
+
+/* --- Area Interaktif (Statistik, Tabs, & Konten) --- */
+
 .about-interactive-area {
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .stats-container {
@@ -91,7 +135,6 @@
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
-
 .stat-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 20px rgba(102, 210, 206, 0.2);
@@ -102,7 +145,6 @@
     font-weight: 700;
     color: #2daa9e;
 }
-
 .stat-label {
     font-size: 0.9rem;
     color: #6b7280;
@@ -110,9 +152,10 @@
 
 .tabs {
     display: flex;
-    justify-content: center; /* Menengahkan tombol tab */
-    border-bottom: 1px solid #d1d5db;
-    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 2rem;
 }
 
 .tab-button {
@@ -127,41 +170,41 @@
     font-weight: 600;
     color: #6b7280;
     position: relative;
-    bottom: -1px;
-    border-bottom: 3px solid transparent;
+    bottom: -2px;
+    border-bottom: 4px solid transparent;
     transition: all 0.3s ease;
 }
-
 .tab-button:hover {
     color: #2daa9e;
 }
-
 .tab-button.active {
     color: #2daa9e;
-    border-bottom-color: #2daa9e;
+    border-bottom-color: #66d2ce;
 }
 
 .tab-content {
     background-color: #ffffff;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
-    padding: 2rem;
-    min-height: 150px;
+    padding: 2rem; /* Padding lebih besar */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Konten mulai dari atas */
     animation: fadeIn 0.5s ease;
-    text-align: center;
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
+.content-pane {
+    width: 100%;
+    text-align: center;
+}
 .content-pane h4 {
     margin-top: 0;
     font-size: 1.2rem;
@@ -175,6 +218,13 @@
     margin-bottom: 0;
     color: #6b7280;
 }
+.education-item + .education-item {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* --- Styling untuk Daftar Tags (Skills, Tools, Interests) --- */
 
 .skills-list,
 .interests-list,
@@ -187,7 +237,6 @@
     list-style: none;
     margin: 0;
 }
-
 .skills-list li,
 .interests-list li,
 .tools-list li {
@@ -199,7 +248,6 @@
     font-weight: 500;
     transition: all 0.3s ease;
 }
-
 .skills-list li:hover,
 .interests-list li:hover,
 .tools-list li:hover {
@@ -207,67 +255,14 @@
     color: white;
     transform: scale(1.05);
 }
-
-.button-group {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.btn {
-    padding: 0.8rem 1.8rem;
-    border: 2px solid #66d2ce;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background-color: #66d2ce;
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background-color: #2daa9e;
-    border-color: #2daa9e;
-    transform: translateY(-2px);
-}
-
-.education-item + .education-item {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eaeaea;
-}
-
-/* Styling untuk Markdown agar sesuai */
-.about-description strong {
-    font-weight: 700;
-    color: #2daa9e;
-}
-
-.about-description em {
-    font-style: italic;
-    color: #4a5568;
-}
-
-/* --- Styling Baru untuk Skill Section --- */
-
-.skill-categories-container {
+.skill-category {
     width: 100%;
+    margin-bottom: 2rem;
     text-align: left;
 }
-
-.skill-category {
-    margin-bottom: 2rem;
-}
-
 .skill-category:last-child {
     margin-bottom: 0;
 }
-
 .skill-category h3 {
     font-size: 1.1rem;
     font-weight: 700;
@@ -276,13 +271,11 @@
     border-bottom: 2px solid #e5e7eb;
     padding-bottom: 0.5rem;
 }
-
 .skill-cards-container {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
 }
-
 .skill-card {
     background-color: #ffffff;
     color: #4a5568;
@@ -294,7 +287,6 @@
     cursor: default;
     transition: all 0.3s ease;
 }
-
 .skill-card:hover {
     transform: translateY(-4px) scale(1.02);
     background-color: #2daa9e;
@@ -303,83 +295,244 @@
     box-shadow: 0 7px 15px rgba(45, 170, 158, 0.2);
 }
 
-/* STYLING RESPONSIVE PART (MEDIA QUERIES) */
+/* --- Styling untuk Semua Timeline (Vertikal & Horizontal) --- */
+.timeline-period {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+.timeline-role {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #374151;
+    margin: 0;
+}
+.timeline-company {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2daa9e;
+    margin: 0.25rem 0 0.75rem 0;
+}
+.timeline-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #6b7280;
+    margin: 0;
+}
 
-/* --- Tampilan Tablet (Layar medium) --- */
+/* Vertikal (Experience) */
+.experience-timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+.experience-timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #66d2ce;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+.experience-timeline .timeline-item {
+    padding: 1rem 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+.experience-timeline .timeline-item.item-left {
+    left: 0;
+}
+.experience-timeline .timeline-item.item-right {
+    left: 50%;
+}
+.experience-timeline .timeline-marker {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -11px;
+    background-color: #ffffff;
+    border: 4px solid #2daa9e;
+    top: 30px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.experience-timeline .timeline-item.item-right .timeline-marker {
+    left: -9px;
+}
+.experience-timeline .timeline-card {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+.experience-timeline .timeline-item .timeline-card::after {
+    content: ' ';
+    position: absolute;
+    top: 28px;
+    right: -15px;
+    border: 15px solid transparent;
+    border-left-color: white;
+}
+.experience-timeline .timeline-item.item-right .timeline-card::after {
+    left: -15px;
+    border-left-color: transparent;
+    border-right-color: white;
+}
+
+/* Horizontal (Organizations) */
+.horizontal-timeline {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    padding: 4rem 0;
+    align-items: center;
+    scrollbar-width: none;
+}
+.horizontal-timeline::-webkit-scrollbar {
+    display: none;
+}
+.horizontal-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e5e7eb;
+    z-index: 0;
+}
+.horizontal-timeline .horizontal-timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 300px;
+    padding: 0 1rem;
+    position: relative;
+}
+.horizontal-timeline .horizontal-timeline-marker {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border: 4px solid #66d2ce;
+    border-radius: 50%;
+    z-index: 1;
+    flex-shrink: 0;
+}
+.horizontal-timeline .horizontal-timeline-content {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.horizontal-timeline .horizontal-timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px;
+}
+.horizontal-timeline .horizontal-timeline-item:nth-child(odd) .horizontal-timeline-content {
+    order: -1;
+    margin-bottom: 20px;
+}
+.horizontal-timeline .horizontal-timeline-item:nth-child(odd) .horizontal-timeline-content::before {
+    top: 100%;
+    border-color: #ffffff transparent transparent transparent;
+}
+.horizontal-timeline .horizontal-timeline-item:nth-child(even) .horizontal-timeline-content {
+    order: 1;
+    margin-top: 20px;
+}
+.horizontal-timeline .horizontal-timeline-item:nth-child(even) .horizontal-timeline-content::before {
+    bottom: 100%;
+    border-color: transparent transparent #ffffff transparent;
+}
+.horizontal-timeline .timeline-subtitle {
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+/* --- Aturan Responsif --- */
+
 @media (max-width: 992px) {
     .about-section {
-        padding: 5rem 5%; /* Kurangi padding section */
+        padding: 5rem 5%;
     }
-
     .about-intro-container {
-        gap: 2rem; /* Kurangi jarak antara gambar dan bio */
-        align-items: flex-start;
+        gap: 2rem;
     }
-
     .about-bio h3 {
-        font-size: 1.8rem;
-    }
-
-    .about-description {
-        font-size: 1rem;
-    }
-
-    .stats-container {
-        gap: 1rem;
-    }
-
-    .stat-number {
         font-size: 1.8rem;
     }
 }
 
-/* --- Tampilan HP (Layar kecil) --- */
 @media (max-width: 768px) {
     .about-section {
-        padding: 4rem 5%;
+        padding: 4rem 1.5rem;
     }
-
-    /* Ubah layout intro menjadi vertikal */
     .about-intro-container {
         flex-direction: column;
         text-align: center;
         gap: 2.5rem;
     }
-
     .about-image {
         max-width: 280px;
-        margin: 0 auto; /* Tengahkan gambar */
+        margin: 0 auto;
     }
-
     .about-bio {
         max-width: 100%;
     }
-
-    .about-bio h3 {
-        font-size: 1.6rem;
-    }
-
-    /* Ubah layout kartu statistik menjadi vertikal */
     .stats-container {
         flex-direction: column;
     }
-
     .stat-card {
-        max-width: 100%; /* Lebar penuh */
+        max-width: 100%;
     }
-
-    /* Perkecil tombol tab agar muat */
     .tabs {
-        flex-wrap: wrap; /* Izinkan tombol untuk pindah baris */
-        justify-content: center;
+        gap: 0.2rem;
     }
-
     .tab-button {
-        font-size: 0.9rem;
-        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+        padding: 0.75rem 0.5rem;
     }
 
-    .button-group {
-        justify-content: center;
+    /* Timeline Vertikal menjadi satu kolom di mobile */
+    .experience-timeline::after {
+        left: 20px;
+    }
+    .experience-timeline .timeline-item,
+    .experience-timeline .timeline-item.item-right {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 0px;
+        left: 0%;
+    }
+    .experience-timeline .timeline-marker,
+    .experience-timeline .timeline-item.item-right .timeline-marker {
+        left: 11px;
+    }
+    .experience-timeline .timeline-item .timeline-card::after,
+    .experience-timeline .timeline-item.item-right .timeline-card::after {
+        left: -15px;
+        border-right: 15px solid white;
+        border-left: none;
     }
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaGraduationCap, FaCode, FaHeart, FaBookOpen, FaTools } from 'react-icons/fa';
+import { FaBookOpen, FaBriefcase, FaCode, FaGraduationCap, FaHeart, FaTools, FaUsers } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import './AboutSection.css';
 
@@ -44,10 +44,15 @@ const AboutSection = ({ aboutData }) => {
                     <button className={`tab-button ${activeTab === 'education' ? 'active' : ''}`} onClick={() => setActiveTab('education')}>
                         <FaGraduationCap /> Education
                     </button>
+                    <button className={`tab-button ${activeTab === 'experience' ? 'active' : ''}`} onClick={() => setActiveTab('experience')}>
+                        <FaBriefcase /> Experience
+                    </button>
+                    <button className={`tab-button ${activeTab === 'organizations' ? 'active' : ''}`} onClick={() => setActiveTab('organizations')}>
+                        <FaUsers /> Organizations
+                    </button>
                     <button className={`tab-button ${activeTab === 'skills' ? 'active' : ''}`} onClick={() => setActiveTab('skills')}>
                         <FaCode /> Skills
                     </button>
-                    {/* TOMBOL BARU */}
                     <button className={`tab-button ${activeTab === 'tools' ? 'active' : ''}`} onClick={() => setActiveTab('tools')}>
                         <FaTools /> Tools
                     </button>
@@ -70,6 +75,49 @@ const AboutSection = ({ aboutData }) => {
                                     </p>
                                 </div>
                             ))}
+                        </div>
+                    )}
+
+                    {activeTab === 'experience' && (
+                        <div className="content-pane">
+                            {/* Kontainer utama untuk roadmap/timeline */}
+                            <div className="experience-timeline">
+                                {aboutData.experiences.map((exp, index) => (
+                                    // Setiap item pengalaman
+                                    <div className={`timeline-item ${index % 2 === 0 ? 'item-left' : 'item-right'}`} key={index}>
+                                        <div className="timeline-marker"></div>
+                                        <div className="timeline-card">
+                                            <div className="timeline-card-header">
+                                                <span className="timeline-period">{exp.period}</span>
+                                                <h5 className="timeline-role">{exp.role}</h5>
+                                            </div>
+                                            <p className="timeline-company">{exp.company}</p>
+                                            <p className="timeline-description">{exp.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
+                    {activeTab === 'organizations' && (
+                        <div className="content-pane">
+                            {/* Menggunakan className "experience-timeline" yang SAMA dengan Experience */}
+                            <div className="experience-timeline">
+                                {aboutData.organizations &&
+                                    aboutData.organizations.map((org, index) => (
+                                        // Strukturnya sama persis, hanya sumber datanya yang beda
+                                        <div className={`timeline-item ${index % 2 === 0 ? 'item-left' : 'item-right'}`} key={index}>
+                                            <div className="timeline-marker"></div>
+                                            <div className="timeline-card">
+                                                <span className="timeline-period">{org.period}</span>
+                                                <h5 className="timeline-role">{org.role}</h5>
+                                                <p className="timeline-company">{org.organization}</p>
+                                                <p className="timeline-description">{org.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                            </div>
                         </div>
                     )}
 

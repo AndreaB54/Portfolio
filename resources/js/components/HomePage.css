@@ -6,12 +6,12 @@
     --bg-muted: #98a1bc;
     --text-light: #f4ebd3;
     --text-accent: #ded3c4;
-    --accent-glow: rgba(222, 211, 196, 0.2); 
+    --accent-glow: rgba(222, 211, 196, 0.2);
 }
 
 body {
-    margin: 0; 
-    background-color: var(--bg-dark); /* Pindahkan warna dasar ke body */
+    margin: 0;
+    background-color: var(--bg-dark);
 }
 
 .homepage {
@@ -33,24 +33,24 @@ body {
 
 /* Navbar */
 .navbar {
-    position: sticky; 
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 7%; 
-    z-index: 1000; 
-    transition: all 0.3s ease-in-out; 
-    box-sizing: border-box; 
+    padding: 2rem 7%;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 .navbar.scrolled {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: rgba(64, 66, 88, 0.85); 
-    backdrop-filter: blur(10px); 
+    background-color: rgba(64, 66, 88, 0.85);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(152, 161, 188, 0.2);
 }
@@ -76,7 +76,7 @@ body {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
-    position: relative; 
+    position: relative;
     transition: color 0.3s ease;
 }
 
@@ -144,12 +144,12 @@ body {
     justify-content: space-between;
     padding: 5rem 7%;
     gap: 2rem;
-    min-height: 90vh; 
+    min-height: 90vh;
 }
 
 .hero-text {
     max-width: 55%;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .hero-text .subtitle {
@@ -187,11 +187,11 @@ body {
 
 .hero-text .description {
     margin-top: 1.5rem;
-    max-width: 60ch; 
-    line-height: 1.9; 
-    font-weight: 400; 
+    max-width: 60ch;
+    line-height: 1.9;
+    font-weight: 400;
     font-size: 1.3rem;
-    letter-spacing: 0.5px; 
+    letter-spacing: 0.5px;
 }
 
 .cta-buttons {
@@ -217,7 +217,7 @@ body {
 
 /* Footer Styles */
 .footer-section {
-    background-color: #404258; 
+    background-color: #404258;
     padding: 4rem 2rem;
     color: var(--bg-muted);
     font-family: 'Poppins', sans-serif;
@@ -268,7 +268,7 @@ body {
 
 .footer-copyright {
     font-size: 0.9rem;
-    color: rgba(152, 161, 188, 0.6); 
+    color: rgba(152, 161, 188, 0.6);
 }
 
 /* RESPONSIVE PART (MEDIA QUERIES) */
@@ -289,36 +289,33 @@ body {
 /* Tampilan HP (Mobile) */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1.5rem 5%; /* Padding navbar diperkecil */
+        padding: 1.5rem 5%;
     }
 
-    /* Tampilkan tombol hamburger */
     .hamburger-menu {
         display: block;
     }
 
-    /* Atur menu navigasi untuk mobile */
     .nav-links {
+        display: none;
         position: fixed;
         top: 0;
         right: 0;
-        width: 70%; /* Lebar menu mobile */
+        width: 70%;
         height: 100vh;
-        background-color: #404258; 
-        flex-direction: column; /* Ubah jadi vertikal */
+        background-color: #404258;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2rem;
-        transform: translateX(100%); 
-        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* Kelas 'active' ini akan ditambahkan dengan JavaScript saat hamburger di-klik */
     .nav-links.active {
-        transform: translateX(0); 
+        display: flex;
     }
-    
-    /* Ubah layout Hero Section menjadi vertikal */
+
+    /* Sisa styling responsif tetap sama */
     .hero-section {
         flex-direction: column;
         text-align: center;
@@ -326,21 +323,21 @@ body {
     }
 
     .hero-text {
-        max-width: 100%; 
-        order: 2; 
+        max-width: 100%;
+        order: 2;
     }
 
     .hero-image {
-        order: 1; 
+        order: 1;
         margin-bottom: 2rem;
     }
-    
+
     .hero-image img {
-        max-width: 280px; 
+        max-width: 280px;
     }
 
     .hero-text h1 {
-        font-size: 2.8rem; 
+        font-size: 2.8rem;
     }
 
     .hero-text .description {
